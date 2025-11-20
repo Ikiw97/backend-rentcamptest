@@ -88,7 +88,7 @@ async def root():
 async def health_check():
     return {
         "status": "healthy",
-        "database": "connected" if db else "disconnected"
+        "database": "connected" if db is not None else "disconnected"
     }
 
 if __name__ == "__main__":
